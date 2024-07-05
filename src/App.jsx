@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from './button';
 import Statistics from './statistics';
+import './style.css';
 const NoFeedBack = (props) => {
   if (props.clicks.length === 0) {
     return (
@@ -36,17 +37,17 @@ function App() {
     setNeutral(neutral + 1)
   }
   return (
-    <>
+    <div className='app'>
       <h1>
         Unicafe: Give Feedback
       </h1>
-      <div>
+      <div className='btn-div'>
       <Button handleClick={handleGood} text='good'></Button>
       <Button handleClick={handleBad} text='bad'></Button>
       <Button handleClick={handleNeutral} text='neutral'></Button>
       </div>
       <NoFeedBack clicks = {clicks} good = {good} bad = {bad} neutral = {neutral} total = {total} average = {average} positive = {positive}/>
-    </>
+    </div>
   )
 }
 
